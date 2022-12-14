@@ -101,3 +101,12 @@ Select AVG(population) AS Population_average from countries;
 
 --Population of most populous country--
 SELECT MAX(population) AS Population_MAX from countries
+
+--ONLY displays countries with a population exceeding 125,000,000 in alphabetical order--
+Select name, total(population) as total_pop
+From countries
+Group by name
+Having total_pop > 125000000
+Order by name asc;
+
+
