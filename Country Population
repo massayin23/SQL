@@ -110,3 +110,14 @@ Having total_pop > 125000000
 Order by name asc;
 
 
+--Shows how populated countries are depending on if they meet numeric criteria--
+
+WHEN population > 100000000 THEN "High Population" 
+WHEN population > 50000000 THEN "Medium Population"
+WHEN population > 25000000 THEN "Low Population"
+
+ELSE"small population" 
+
+END as "population_sizes" from countries 
+
+Group BY "population_sizes"; 
